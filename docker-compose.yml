@@ -1,0 +1,31 @@
+version: "3"
+
+services: 
+  client:
+    build: ../client
+    command: npm start
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../client:/usr/app/client
+  server:
+    build: ../server
+    command: npm start
+    ports:
+      - "3001:3001"
+    volumes:
+      - ../server:/usr/app/server
+  nameserver:
+    build: ../nameserver
+    command: npm start
+    ports:
+      - "3002:3002"
+    volumes:
+      - ../nameserver:/usr/app/nameserver
+  resourcemanager:
+    build: ../resourcemanager
+    command: npm start
+    ports:
+      - "3003:3003"
+    volumes:
+      - ../resourcemanager:/usr/app/resourcemanager
